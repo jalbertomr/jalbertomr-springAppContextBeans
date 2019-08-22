@@ -3,18 +3,20 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<bean id="claseBean" class="com.bext.beans.ClaseParaBean">
-	<property name="propiedadDeClaseMensaje" value="datos para Mensaje"></property>
-</bean>	 
-
-<bean id="beanTierra" class="com.bext.beans.Tierra">
-	<property name="color" value="azul"></property>
-	<property name="diametro" value="12742"></property>
+<bean id="persona" class="com.bext.beans.Persona">
+   <property name="pais" ref="pais"></property>
+   <property name="id" value="1"></property>
+   <property name="nombre" value="Alberto"></property>
+   <property name="telefono" value="1234567"></property>
 </bean>
 
-<bean id="beanMarte" class="com.bext.beans.Marte">
-	<property name="color" value="rojo"></property>
-	<property name="diametro" value="6779"></property>
+<bean id="pais" class="com.bext.beans.Pais">
+    <property name="nombre" value="Mexico"></property>
+    <property name="ciudad" ref="ciudad"></property>
+</bean>
+
+<bean id="ciudad" class="com.bext.beans.Ciudad">
+	<property name="nombre" value="CDMX"></property>
 </bean>
 
 </beans>
