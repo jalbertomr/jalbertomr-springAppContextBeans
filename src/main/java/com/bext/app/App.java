@@ -2,11 +2,13 @@ package com.bext.app;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.bext.beans.ClaseParaBean;
 import com.bext.beans.Marte;
 import com.bext.beans.Tierra;
+import com.bext.config.AppConfig;
 
 public class App {
 
@@ -20,10 +22,11 @@ public class App {
 */
 		
 		/* Metodo Beans */
-		ApplicationContext appContext = new ClassPathXmlApplicationContext("com/bext/xml/beans.xml");
+		//ApplicationContext appContext = new ClassPathXmlApplicationContext("com/bext/xml/beans.xml");
+		ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
 		//ClaseParaBean cpb = (ClaseParaBean) appContext.getBean("claseBean");
 		ClaseParaBean cpb = (ClaseParaBean) appContext.getBean(ClaseParaBean.class);
-		System.out.println(cpb.getPropiedadDeClaseMensaje());
+		System.out.println("ClaseParaBean.getPropiedadDeClaseMensaje:" + cpb.getPropiedadDeClaseMensaje());
 		
 		Tierra tierra = (Tierra) appContext.getBean(Tierra.class);
 		System.out.println("Tierra color:" + tierra.getColor() );

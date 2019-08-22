@@ -2,8 +2,12 @@ package com.bext.beans;
 
 import java.math.BigInteger;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class Tierra {
+	@Value("AZUL")
 	private String Color;
+	@Value("12742")
 	private BigInteger diametro;
 
 	public String getColor() {

@@ -2,8 +2,12 @@ package com.bext.beans;
 
 import java.math.BigInteger;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class Marte {
+	@Value("ROJO")
 	private String Color;
+	@Value("6779")
 	private BigInteger diametro;
 
 	public String getColor() {
