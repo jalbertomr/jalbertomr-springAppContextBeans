@@ -9,6 +9,7 @@ import com.bext.beans.ClaseParaBean;
 import com.bext.beans.Marte;
 import com.bext.beans.Tierra;
 import com.bext.config.AppConfig;
+import com.bext.config.AppConfig2;
 
 public class App {
 
@@ -23,7 +24,7 @@ public class App {
 		
 		/* Metodo Beans */
 		//ApplicationContext appContext = new ClassPathXmlApplicationContext("com/bext/xml/beans.xml");
-		ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
+		ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class, AppConfig2.class);
 		//ClaseParaBean cpb = (ClaseParaBean) appContext.getBean("claseBean");
 		ClaseParaBean cpb = (ClaseParaBean) appContext.getBean(ClaseParaBean.class);
 		System.out.println("ClaseParaBean.getPropiedadDeClaseMensaje:" + cpb.getPropiedadDeClaseMensaje());
