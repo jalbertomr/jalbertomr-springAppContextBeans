@@ -24,7 +24,11 @@ public class App {
 		
 		/* Metodo Beans */
 		//ApplicationContext appContext = new ClassPathXmlApplicationContext("com/bext/xml/beans.xml");
-		ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class, AppConfig2.class);
+		AnnotationConfigApplicationContext appContext = new AnnotationConfigApplicationContext();
+		appContext.register(AppConfig.class);
+		appContext.register(AppConfig2.class);
+		appContext.refresh();
+		//appContext.refresh();
 		//ClaseParaBean cpb = (ClaseParaBean) appContext.getBean("claseBean");
 		ClaseParaBean cpb = (ClaseParaBean) appContext.getBean(ClaseParaBean.class);
 		System.out.println("ClaseParaBean.getPropiedadDeClaseMensaje:" + cpb.getPropiedadDeClaseMensaje());
