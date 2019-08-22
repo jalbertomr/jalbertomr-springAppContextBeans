@@ -6,4 +6,15 @@
 <bean id="claseBean" class="com.bext.beans.ClaseParaBean">
 	<property name="propiedadDeClaseMensaje" value="datos para Mensaje"></property>
 </bean>	 
+
+<bean id="beanTierra" class="com.bext.beans.Tierra">
+	<property name="color" value="azul"></property>
+	<property name="diametro" value="12742"></property>
+</bean>
+
+<bean id="beanMarte" class="com.bext.beans.Marte">
+	<property name="color" value="rojo"></property>
+	<property name="diametro" value="6779"></property>
+</bean>
+
 </beans>

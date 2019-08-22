@@ -5,6 +5,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.bext.beans.ClaseParaBean;
+import com.bext.beans.Marte;
+import com.bext.beans.Tierra;
 
 public class App {
 
@@ -22,6 +24,14 @@ public class App {
 		//ClaseParaBean cpb = (ClaseParaBean) appContext.getBean("claseBean");
 		ClaseParaBean cpb = (ClaseParaBean) appContext.getBean(ClaseParaBean.class);
 		System.out.println(cpb.getPropiedadDeClaseMensaje());
+		
+		Tierra tierra = (Tierra) appContext.getBean(Tierra.class);
+		System.out.println("Tierra color:" + tierra.getColor() );
+		System.out.println("Tierra diametro:" + tierra.getDiametro().toString());
+		
+		Marte marte = (Marte) appContext.getBean("beanMarte");
+		System.out.println("Marte color:" + marte.getColor());
+		System.out.println("Marte diametro:" + marte.getDiametro().toString());
 		
 		((ConfigurableApplicationContext)appContext).close();
 	}
