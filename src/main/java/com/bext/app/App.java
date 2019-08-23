@@ -5,6 +5,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.bext.beans.Ciudad;
 import com.bext.beans.Persona;
 import com.bext.config.AppConfig;
 import com.bext.config.AppConfig2;
@@ -22,7 +23,11 @@ public class App {
 		//appContext.refresh();
 		
 		Persona per = (Persona) appContext.getBean("personaAlias2");
-		System.out.println(per.getId() + " " + per.getNombre() +" "+per.getTelefono() + " "+ per.getPais().getNombre() + " "+per.getPais().getCiudad().getNombre());
+		System.out.println(per.getId() + " " + per.getNombre() +" "+per.getTelefono() + " "+ per.getPais().getNombre());
+
+		for (Ciudad ciudad:  per.getPais().getCiudades()) {
+			System.out.println(ciudad.getNombre());
+		}
 		
 		((ConfigurableApplicationContext)appContext).close();
 	}

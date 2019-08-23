@@ -12,11 +12,25 @@
 
 	<bean id="pais" class="com.bext.beans.Pais">
 		<property name="nombre" value="Mexico"></property>
-		<property name="ciudad" ref="ciudad"></property>
+		<property name="ciudades">
+			<list>
+			   <ref bean="ciudad1"></ref>
+			   <ref bean="ciudad2"></ref>
+			   <ref bean="ciudad3"></ref>
+			</list>
+		</property>
 	</bean>
 
-	<bean id="ciudad" class="com.bext.beans.Ciudad">
+	<bean id="ciudad1" class="com.bext.beans.Ciudad">
 		<property name="nombre" value="CDMX"></property>
 	</bean>
+	<bean id="ciudad2" class="com.bext.beans.Ciudad">
+		<property name="nombre" value="Tepatitlan"></property>
+	</bean>
+	<bean id="ciudad3" class="com.bext.beans.Ciudad">
+		<property name="nombre" value="Guadalajara"></property>
+	</bean>
+	
+	
     <alias name="persona" alias="personaAlias"></alias>
 </beans>
