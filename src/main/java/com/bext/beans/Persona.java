@@ -5,6 +5,7 @@ public class Persona {
 	private String nombre;
 	private String telefono;
 	private Pais pais;
+	private Ciudad ciudad;
 	
 	public int getId() { return id; }
 	public void setId(int id) {	this.id = id; }
@@ -17,4 +18,7 @@ public class Persona {
 
 	public Pais getPais() {	return pais;}
 	public void setPais(Pais pais) {this.pais = pais;}
+	
+	public Ciudad getCiudad() {	return ciudad;}
+	public void setCiudad(Ciudad ciudad) {	this.ciudad = ciudad;}
 }

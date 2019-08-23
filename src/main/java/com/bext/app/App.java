@@ -22,12 +22,12 @@ public class App {
 		//appContext.register(AppConfig2.class);
 		//appContext.refresh();
 		
-		Persona per = (Persona) appContext.getBean("personaAlias2");
-		System.out.println(per.getId() + " " + per.getNombre() +" "+per.getTelefono() + " "+ per.getPais().getNombre());
+		Persona per = (Persona) appContext.getBean("persona");
+		Persona per2 = (Persona) appContext.getBean("persona");
+		System.out.println(per.getId() + " " + per.getNombre() +" "+per.getTelefono() + " "+ per.getPais().getNombre() + " " + per.getCiudad().getNombre());
 
-		for (Ciudad ciudad:  per.getPais().getCiudades()) {
-			System.out.println(ciudad.getNombre());
-		}
+		System.out.println(per);
+		System.out.println(per2);
 		
 		((ConfigurableApplicationContext)appContext).close();
 	}
